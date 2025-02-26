@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-space-dark text-space-text m-0 min-h-screen font-sans;
+}
+
+.glass-effect {
+  @apply bg-space-dark/50 backdrop-blur-md;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-space-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-space-light rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-space-accent;
+}
+
+/* Hide scrollbar for non-hover state */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-space-accent to-space-highlight;
+}
+
+/* Enhanced Space Button */
+.btn-primary {
+  @apply p-0 m-0 border-none bg-transparent cursor-pointer relative flex font-semibold text-xl gap-2 items-center;
+  --primary-color: theme('colors.space.text');
+  --hovered-color: theme('colors.space.accent');
+}
+
+.btn-primary p {
+  @apply m-0 relative text-xl;
+  color: var(--primary-color);
+}
+
+.btn-primary::after {
+  @apply absolute content-[''] w-0 left-0 -bottom-2;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.btn-primary p::before {
+  @apply absolute content-[attr(data-text)] w-0 inset-0 overflow-hidden;
+  color: var(--hovered-color);
+  transition: 0.3s ease-out;
+}
+
+.btn-primary:hover::after {
+  @apply w-full;
+}
+
+.btn-primary:hover p::before {
+  @apply w-full;
+}
+
+.btn-primary:hover svg {
+  @apply translate-x-1 text-space-accent;
+}
+
+.btn-primary svg {
+  @apply transition-all duration-200 relative w-6 h-6;
+  color: var(--primary-color);
+  transition-delay: 0.2s;
+}
+
+/* Ghost button style */
+.btn-ghost {
+  @apply hover:bg-white/5 transition-colors px-4 py-2 rounded-lg;
+}
+
+/* Navigation link */
+.nav-link {
+  @apply text-space-text/80 hover:text-white transition-colors;
+}
+
+/* Form controls */
+.form-input {
+  @apply w-full p-3 bg-space-dark/50 rounded-lg border border-space-accent/20 
+         focus:border-space-accent focus:ring-1 focus:ring-space-accent outline-none transition-colors;
+}
+
+/* Animation utilities */
+@keyframes float {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg); 
+  }
+  25% { 
+    transform: translate(20px, -20px) rotate(5deg); 
+  }
+  50% { 
+    transform: translate(0, -40px) rotate(0deg); 
+  }
+  75% { 
+    transform: translate(-20px, -20px) rotate(-5deg); 
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.5); }
+}
