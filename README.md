@@ -11,7 +11,7 @@ PulsarUI is a powerful, easy-to-use React component library designed for stunnin
 
 ## 🚀 Live Demo
 - **Frontend:** [PulsarUI Live](https://pulsarui.pages.dev)
-- **Backend API:** [LegoUI Backend](https://legoui.onrender.com/)
+- **Backend API:** [PulsarUI Backend](https://pulsarui1.onrender.com)
 
 ## 💻 Development & Contribution
 Want to contribute? Follow these steps:
