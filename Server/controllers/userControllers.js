@@ -139,7 +139,7 @@ class UserControllers {
       if (user) {
         const secret = user._id + process.env.JWT_SECRET_KEY;
         const token = jwt.sign({ userID: user._id }, secret, { expiresIn: '15m' });
-        const link = `http://localhost:3000/reset/${user._id}/${token}`;
+        const link = `https://pulsarui.pages.dev/reset/${user._id}/${token}`;
         console.log(link);
 
         let info = await transporter.sendMail({
