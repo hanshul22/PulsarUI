@@ -21,7 +21,7 @@ const sessionKey = process.env.SESSIONKEY;
 ConnectToDB();
 
 app.use(cors({
-    origin: ["https://pulsarui.pages.dev/", "http://localhost:3000"],
+    origin: ["https://pulsarui.pages.dev/", "http://localhost:3000", "https://e303bf10.pulsarui.pages.dev"],
     methods: "GET, POST, PUT, DELETE",
     credentials: true
 }));
