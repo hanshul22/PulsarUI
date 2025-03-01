@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:500';
+const BASE_URL = 'https://pulsarui-szzd.onrender.com';
 
 const api = axios.create({
   baseURL: BASE_URL,
