@@ -5,7 +5,7 @@ import {
   selectIsAuthenticated,
   selectUserLoading,
   selectUserError,
-  // logout,
+  logoutUser
 } from '../store/slices/userSlice';
 
 export const useAuth = () => {
@@ -18,7 +18,7 @@ export const useAuth = () => {
   const error = useSelector(selectUserError);
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logoutUser());
     navigate('/login');
   };
 

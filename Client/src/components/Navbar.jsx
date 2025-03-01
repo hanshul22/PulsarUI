@@ -42,25 +42,12 @@ const Navbar = ({ onMenuClick }) => {
           <MenuCheckbox isOpen={isSidebarOpen} onToggle={handleMenuToggle} />
           
           <Link to="/" className="flex items-center gap-2">
-            {/* <motion.div
-              animate={{ 
-                rotate: 360,
-                scale: [1, 1.2, 1],
-              }}
-              transition={{ 
-                rotate: { duration: 4, repeat: Infinity, ease: "linear" },
-                scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-              }}
-              className="w-10 h-10 rounded-full bg-gradient-to-r from-space-accent to-space-highlight flex items-center justify-center"
-            >
-              <span className="text-white font-bold text-xl">P</span>
-            </motion.div> */}
             <motion.span 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="text-xl font-bold gradient-text"
             >
-              Pulser UI
+              Pulsar UI
             </motion.span>
           </Link>
         </div>

@@ -51,19 +51,21 @@ function App() {
             </Suspense>
           } />
           
-          {/* Dashboard route without protection */}
+          {/* Dashboard route with protection */}
           <Route path="/dashboard" element={
-            <>
-              <Navbar onMenuClick={toggleSidebar} />
-              <div className="flex">
-                <Sidebar isOpen={isSidebarOpen} />
-                <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-0'} pt-16`}>
-                  <Suspense fallback={<PageLoader />}>
-                    <Dashboard />
-                  </Suspense>
-                </main>
-              </div>
-            </>
+            <ProtectedRoute>
+              <>
+                <Navbar onMenuClick={toggleSidebar} />
+                <div className="flex">
+                  <Sidebar isOpen={isSidebarOpen} />
+                  <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-0'} pt-16`}>
+                    <Suspense fallback={<PageLoader />}>
+                      <Dashboard />
+                    </Suspense>
+                  </main>
+                </div>
+              </>
+            </ProtectedRoute>
           } />
 
           {/* Other protected routes remain protected */}

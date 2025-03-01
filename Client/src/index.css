@@ -11,16 +11,25 @@
 
 body {
   @apply bg-space-dark text-space-text m-0 min-h-screen font-sans;
+  overscroll-behavior: none; /* Prevent bounce effects */
 }
 
 .glass-effect {
   @apply bg-space-dark/50 backdrop-blur-md;
 }
 
+/* Glassmorphism navbar */
+.glassmorphism-nav {
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 /* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -48,6 +57,8 @@ body {
 /* Gradient text utility */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-space-accent to-space-highlight;
+  position: relative;
+  display: inline-block;
 }
 
 /* Enhanced Space Button */
@@ -66,13 +77,13 @@ body {
   @apply absolute content-[''] w-0 left-0 -bottom-2;
   background: var(--hovered-color);
   height: 2px;
-  transition: 0.3s ease-out;
+  transition: 0.25s ease-out;
 }
 
 .btn-primary p::before {
   @apply absolute content-[attr(data-text)] w-0 inset-0 overflow-hidden;
   color: var(--hovered-color);
-  transition: 0.3s ease-out;
+  transition: 0.25s ease-out;
 }
 
 .btn-primary:hover::after {
@@ -90,7 +101,7 @@ body {
 .btn-primary svg {
   @apply transition-all duration-200 relative w-6 h-6;
   color: var(--primary-color);
-  transition-delay: 0.2s;
+  transition-delay: 0.15s;
 }
 
 /* Ghost button style */
@@ -109,27 +120,152 @@ body {
          focus:border-space-accent focus:ring-1 focus:ring-space-accent outline-none transition-colors;
 }
 
-/* Animation utilities */
+/* Animation utilities - optimized for performance */
 @keyframes float {
   0%, 100% { 
     transform: translate(0, 0) rotate(0deg); 
   }
-  25% { 
-    transform: translate(20px, -20px) rotate(5deg); 
-  }
   50% { 
-    transform: translate(0, -40px) rotate(0deg); 
-  }
-  75% { 
-    transform: translate(-20px, -20px) rotate(-5deg); 
+    transform: translate(0, -15px) rotate(0deg); 
   }
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 10s ease-in-out infinite;
+  will-change: transform;
 }
 
+/* Nebula glow animation - optimized */
+@keyframes nebula-glow {
+  0%, 100% { 
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.15;
+    transform: scale(1.05);
+  }
+}
+
+.animate-nebula {
+  animation: nebula-glow 20s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Space dust particles - optimized */
+@keyframes space-dust {
+  0% {
+    transform: translateY(0);
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 0.1;
+  }
+}
+
+.space-dust {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: space-dust 25s linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Add asteroid styling - optimized */
+.asteroid {
+  filter: drop-shadow(0 0 3px rgba(99, 102, 241, 0.15));
+  will-change: transform, opacity;
+}
+
+/* Enhanced star styling - optimized */
+.star {
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.15);
+  will-change: opacity;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Text reveal animation */
+@keyframes text-reveal {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal span {
+  display: inline-block;
+  animation: text-reveal 0.5s forwards;
+}
+
+/* Glow pulse effect */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px 2px rgba(99, 102, 241, 0.3);
+    opacity: 0.3;
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(99, 102, 241, 0.5);
+    opacity: 0.5;
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s infinite ease-in-out;
+}
+
+/* Twinkle animation for stars */
 @keyframes twinkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(0.5); }
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+/* New animation keyframes */
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+    filter: blur(80px);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(100px);
+  }
+}
+
+.animate-glow {
+  animation: glow 8s infinite ease-in-out;
+  will-change: opacity, filter;
 }
