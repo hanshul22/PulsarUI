@@ -26,6 +26,8 @@ export default function ComponentsPage() {
 
   const getFilteredCodes = () => {
     const sourcePath = type.replace('components/', '') + '_design';
+    console.log(sourcePath);
+    
     
     switch (activeTab) {
       case 'admin':

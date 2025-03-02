@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:500/api/admins/loggedAdmin';
+const API_URL = 'https://pulsarui-szzd.onrender.com/api/admins/loggedAdmin';
 
 export const getJWTAdmin = async (token) => {
   try {

@@ -17,7 +17,7 @@ const ProfileDropdown = () => {
         throw new Error("No token found");
       }
 
-      await axios.post("http://localhost:500/api/admins/jwt/logout", {}, {
+      await axios.post("https://pulsarui-szzd.onrender.com/api/admins/jwt/logout", {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }

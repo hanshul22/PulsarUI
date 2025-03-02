@@ -69,7 +69,7 @@ const CodeUploadForm = () => {
   
       // Send request
       const response = await axios.post(
-        `http://localhost:500/api/admin/upload`,
+        `https://pulsarui-szzd.onrender.com/api/admin/upload`,
         formDataObj,
         {
           headers: {
@@ -98,10 +98,10 @@ const CodeUploadForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 p-10 mx-auto pl-40 pr-40">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="p-10 pl-40 pr-40 mx-auto space-y-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium mb-2">Title</label>
+          <label className="block mb-2 text-sm font-medium">Title</label>
           <input
             type="text"
             name="title"
@@ -112,7 +112,7 @@ const CodeUploadForm = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Source Path</label>
+          <label className="block mb-2 text-sm font-medium">Source Path</label>
           <input
             type="text"
             name="sourcePath"
@@ -123,9 +123,9 @@ const CodeUploadForm = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium mb-2">Image</label>
+          <label className="block mb-2 text-sm font-medium">Image</label>
           <FileUpload
             accept="image/*"
             onChange={(file) => handleFileChange('image', file)}
@@ -134,7 +134,7 @@ const CodeUploadForm = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Video</label>
+          <label className="block mb-2 text-sm font-medium">Video</label>
           <FileUpload
             accept="video/*"
             onChange={(file) => handleFileChange('video', file)}
@@ -143,9 +143,9 @@ const CodeUploadForm = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium mb-2">GitHub URL</label>
+          <label className="block mb-2 text-sm font-medium">GitHub URL</label>
           <input
             type="url"
             name="githubUrl"
@@ -156,7 +156,7 @@ const CodeUploadForm = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Deployed URL</label>
+          <label className="block mb-2 text-sm font-medium">Deployed URL</label>
           <input
             type="url"
             name="deployedUrl"
@@ -168,7 +168,7 @@ const CodeUploadForm = () => {
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-2">Description</label>
+        <label className="block mb-2 text-sm font-medium">Description</label>
         <textarea
           name="description"
           value={formData.description}
@@ -180,35 +180,35 @@ const CodeUploadForm = () => {
 
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-2">HTML</label>
+          <label className="block mb-2 text-sm font-medium">HTML</label>
           <textarea
             name="code.html"
             value={formData.code.html}
             onChange={handleChange}
             rows="4"
-            className="w-full p-2 bg-gray-700 rounded-lg font-mono"
+            className="w-full p-2 font-mono bg-gray-700 rounded-lg"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">CSS</label>
+          <label className="block mb-2 text-sm font-medium">CSS</label>
           <textarea
             name="code.css"
             value={formData.code.css}
             onChange={handleChange}
             rows="4"
-            className="w-full p-2 bg-gray-700 rounded-lg font-mono"
+            className="w-full p-2 font-mono bg-gray-700 rounded-lg"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">JavaScript</label>
+          <label className="block mb-2 text-sm font-medium">JavaScript</label>
           <textarea
             name="code.js"
             value={formData.code.js}
             onChange={handleChange}
             rows="4"
-            className="w-full p-2 bg-gray-700 rounded-lg font-mono"
+            className="w-full p-2 font-mono bg-gray-700 rounded-lg"
           />
         </div>
       </div>

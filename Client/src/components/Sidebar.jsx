@@ -8,7 +8,8 @@ import {
   RiSlideshow3Line,
   RiStackLine,
   RiGamepadLine,
-  RiErrorWarningLine
+  RiErrorWarningLine,
+  RiDashboardHorizontalLine
 } from 'react-icons/ri';
 
 const componentItems = [
@@ -23,6 +24,7 @@ const pageItems = [
   { name: 'Landing Pages', icon: RiLayout4Line, path: '/components/landing' },
   { name: 'Games', icon: RiGamepadLine, path: '/components/games' },
   { name: '404 Error Page', icon: RiErrorWarningLine, path: '/components/404' },
+  { name: 'Dashboards', icon: RiDashboardHorizontalLine, path: '/components/dashboard' },
 ];
 
 const Sidebar = ({ isOpen }) => {
@@ -58,7 +60,7 @@ const Sidebar = ({ isOpen }) => {
       <div className="p-4 space-y-6">
         {/* Components Section */}
         <div className="space-y-2">
-          <h2 className="text-xl font-bold gradient-text px-4">
+          <h2 className="px-4 text-xl font-bold gradient-text">
             Components
           </h2>
           <nav className="space-y-1">
@@ -83,7 +85,7 @@ const Sidebar = ({ isOpen }) => {
 
         {/* Pages Section */}
         <div className="space-y-2">
-          <h2 className="text-xl font-bold gradient-text px-4">
+          <h2 className="px-4 text-xl font-bold gradient-text">
             Pages
           </h2>
           <nav className="space-y-1">

@@ -39,7 +39,7 @@ const Signup = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:500/api/admins/register", {
+      const res = await axios.post("https://pulsarui-szzd.onrender.com/api/admins/register", {
         name: username,
         email,
         password,

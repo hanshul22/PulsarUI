@@ -29,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     const { email, password, } = formData;
     try {
-      const res = await axios.post("http://localhost:500/api/admins/login", {
+      const res = await axios.post("https://pulsarui-szzd.onrender.com/api/admins/login", {
         email,
         password,
       });
@@ -59,7 +59,7 @@ const Login = () => {
   
   return (
     <div className='overflow-hidden '>
-    <div className=" overflow-y-hidden flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="flex items-center justify-center min-h-screen p-4 overflow-y-hidden  bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}

@@ -72,7 +72,7 @@ const CodeView = () => {
 
     try {
       if (adminCodes.some((code) => code._id === codeSnippet._id)) {
-        await axios.delete(`http://localhost:500/api/admin/delete/${codeSnippet._id}`, {
+        await axios.delete(`https://pulsarui-szzd.onrender.com/api/admin/delete/${codeSnippet._id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -80,7 +80,7 @@ const CodeView = () => {
         removeAdminCode(codeSnippet._id);
         navigate('/admin-codes');
       } else if (userCodes.some((code) => code._id === codeSnippet._id)) {
-        await axios.delete(`http://localhost:500/api/user/delete/${codeSnippet._id}`, {
+        await axios.delete(`https://pulsarui-szzd.onrender.com/api/user/delete/${codeSnippet._id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

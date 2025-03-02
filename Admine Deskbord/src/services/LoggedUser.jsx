@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:500/api/users/getAllUsersn';
+const API_URL = 'https://pulsarui-szzd.onrender.com/api/users/getAllUsersn';
 
 export const getJWTUser = async (token) => {
   try {
