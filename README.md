@@ -10,7 +10,7 @@ PulsarUI is a powerful, easy-to-use React component library designed for stunnin
 - 🎨 **Customizable Themes** – Modify styles effortlessly for your project needs.
 
 ## 🚀 Live Demo
-- **Frontend:** [PulsarUI Live](pulsar-ui-seven.vercel.app)
+- **Frontend:** [PulsarUI Live](https://pulsarui.pages.dev/)
 - **Backend API:** [PulsarUI Backend](https://pulsarui-szzd.onrender.com)
 
 ## 💻 Development & Contribution
@@ -26,7 +26,7 @@ Want to contribute? Follow these steps:
 PulsarUI is open-source and licensed under the [MIT License](LICENSE).
 
 ## 🤝 Connect with Us
-- **Website:** [pulsarui.pages.dev](https://pulsarui.pages.dev)
+- **Website:** [pulsarui.pages.dev](https://pulsarui.pages.dev/)
 - **Community Discussions:** Coming Soon!
 - **Report Issues:** [GitHub Issues](https://github.com/yourusername/pulsarui/issues)
 
