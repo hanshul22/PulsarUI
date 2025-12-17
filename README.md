@@ -17,7 +17,7 @@ PulsarUI is a powerful, easy-to-use React component library designed for stunnin
 Want to contribute? Follow these steps:
 
 1. Fork the repository.
-2. Clone it locally: `git clone https://github.com/yourusername/pulsarui.git`
+2. Clone it locally: `git clone https://github.com/hanshul22/pulsarui.git`
 3. Install dependencies: `npm install` or `yarn install`
 4. Start the development server: `npm run dev`
 5. Make your changes and submit a PR! 🎉
