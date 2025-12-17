@@ -22,12 +22,9 @@ Want to contribute? Follow these steps:
 4. Start the development server: `npm run dev`
 5. Make your changes and submit a PR! 🎉
 
-## 📜 License
-PulsarUI is open-source and licensed under the [MIT License](LICENSE).
-
 ## 🤝 Connect with Us
 - **Website:** [pulsarui.pages.dev](https://pulsarui.pages.dev/)
 - **Community Discussions:** Coming Soon!
-- **Report Issues:** [GitHub Issues](https://github.com/yourusername/pulsarui/issues)
+- **Report Issues:** [GitHub Issues](https://github.com/hanshul22/pulsarui/issues)
 
 💡 Start building with PulsarUI today and transform your UI development experience! ✨
